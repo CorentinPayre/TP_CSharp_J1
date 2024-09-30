@@ -24,6 +24,22 @@ namespace TP_CSharp_J1
             this.dateOfIssue = dateOfIssue;
             this.dueDate = dueDate;
         }
+        public void CreateTransaction(List<Transaction> transactions)
+        {
+            transactions.Add(this);
+            Console.WriteLine("Transaction created.");
+        }
+
+        public void DeleteTransaction(List<Transaction> transactions)
+        {
+            transactions.Remove(this);
+            Console.WriteLine("Transaction deleted.");
+        }
+
+        public Transaction RetrieveTransaction(int transId, List<Transaction> transactions)
+        {
+            return transactions.Find(t => t.transId == transId);
+        }
         public override string ToString()
         {
             return $"Transaction Id: {this.transId}, Member Id: {this.memberId}, Book Id: {this.bookId}, Date Of Issue: {this.dateOfIssue.ToShortDateString()}, Due Date: {this.dueDate.ToShortDateString()}";

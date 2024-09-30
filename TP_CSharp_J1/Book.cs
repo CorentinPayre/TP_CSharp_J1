@@ -32,6 +32,16 @@ namespace TP_CSharp_J1
             this.edition = edition;
             this.dateOfPurchase = dateOfPurchase;
         }
+        public void DisplayBookDetails()
+        {
+            Console.WriteLine(this.ToString());
+        }
+
+        public void UpdateStatus(string newStatus)
+        {
+            status = newStatus;
+            Console.WriteLine($"Book status updated to: {status}");
+        }
         public override string ToString()
         {
             return $"BookId: {this.bookId}, Author: {this.author}, Name: {this.name}, Price: {this.price}, RackNo: {this.rackNo}, Status: {this.status}, Edition: {this.edition}, DateOfPurchase: {this.dateOfPurchase.ToShortDateString()}";

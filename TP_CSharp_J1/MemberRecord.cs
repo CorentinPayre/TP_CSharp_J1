@@ -28,6 +28,37 @@ namespace TP_CSharp_J1
             this.address = address;
             this.phoneNo = phoneNo;
         }
+        public MemberRecord RetrieveMember(int memberId, List<MemberRecord> members)
+        {
+            return members.Find(m => m.memberId == memberId);
+        }
+
+        public void IncreaseBookIssued()
+        {
+            if (noBookIssued < maxBookLimit)
+            {
+                noBookIssued++;
+                Console.WriteLine($"Books issued increased. Current count: {noBookIssued}");
+            }
+            else
+            {
+                Console.WriteLine("Book issue limit reached.");
+            }
+        }
+
+        public void DecreaseBookIssued()
+        {
+            if (noBookIssued > 0)
+            {
+                noBookIssued--;
+                Console.WriteLine($"Books issued decreased. Current count: {noBookIssued}");
+            }
+        }
+
+        public void PayBill(Bill bill)
+        {
+            Console.WriteLine($"Bill {bill.billNo} for {bill.amount} paid by member {memberId}.");
+        }
 
         public override string ToString()
         {
