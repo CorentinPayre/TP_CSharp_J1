@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace TP_CSharp_J1
 {
@@ -31,7 +34,7 @@ namespace TP_CSharp_J1
         }
         public override string ToString()
         {
-            return "BookId : " + this.bookId + ", Author : " + this.author + ", Title : " + this.name + ", Price : " + this.price + "€, Rack Number : " + this.rackNo + ", Status : " + this.status + ", Edition : " + this.edition + ", Date of purchase : " + dateOfPurchase;
+            return $"BookId: {this.bookId}, Author: {this.author}, Name: {this.name}, Price: {this.price}, RackNo: {this.rackNo}, Status: {this.status}, Edition: {this.edition}, DateOfPurchase: {this.dateOfPurchase.ToShortDateString()}";
         }
     }
 }
