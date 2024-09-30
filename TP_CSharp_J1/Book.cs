@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 namespace TP_CSharp_J1
 {
 
-    internal class Book
+    public class Book
     {
         public int bookId { get; set; }
         public string author { get; set; }
         public string name { get; set; }
-        public decimal price { get; set; }
-        public string rackNo { get; set; }
+        public double price { get; set; }
+        public int rackNo { get; set; }
         public string status { get; set; }
         public string edition { get; set; }
         public DateTime dateOfPurchase { get; set; }
 
-        public Book(int bookId, string author, string name, decimal price, string rackNo, string status, string edition, DateTime dateOfPurchase)
+        public Book(int bookId, string author, string name, double price, int rackNo, string status, string edition, DateTime dateOfPurchase)
         {
             this.bookId = bookId;
             this.author = author;
@@ -28,6 +28,10 @@ namespace TP_CSharp_J1
             this.status = status;
             this.edition = edition;
             this.dateOfPurchase = dateOfPurchase;
+        }
+        public override string ToString()
+        {
+            return "BookId : " + this.bookId + ", Author : " + this.author + ", Title : " + this.name + ", Price : " + this.price + "€, Rack Number : " + this.rackNo + ", Status : " + this.status + ", Edition : " + this.edition + ", Date of purchase : " + dateOfPurchase;
         }
     }
 }
